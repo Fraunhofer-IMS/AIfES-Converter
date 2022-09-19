@@ -1,0 +1,664 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Advanced Usage" href="advanced_usage.html" /><link rel="prev" title="Quickstart" href="quickstart.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+        <title>Usage - AIfES-Converter 0.2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">AIfES-Converter 0.2.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/aifes.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">AIfES-Converter 0.2.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_usage.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Available Functions</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h1>
+<p>AIfES-Converter is designed to allow an easy conversion of your model from Keras and PyTorch to AIfES. Different types of
+Feed Forward Neural Networks (FFNNs) are supported with different data types. In the following section we show how to export the model to
+AIfES using this tool.</p>
+<section id="export-of-model">
+<h2>Export of model<a class="headerlink" href="#export-of-model" title="Permalink to this headline">#</a></h2>
+<p>Only Keras and PyTorch are supported directly by the AIfES-Converter converter. But you can use any other framework where the
+FFNNs can be imported by Keras or PyTorch. We first show how to use this tool. Then a brief overview is given, how to
+use this tool with other frameworks.</p>
+<section id="keras-and-pytorch">
+<h3>Keras and PyTorch<a class="headerlink" href="#keras-and-pytorch" title="Permalink to this headline">#</a></h3>
+<p>In the following section we provide a detailed description of the necessary steps.</p>
+<section id="create-the-model">
+<h4>1. Create the model<a class="headerlink" href="#create-the-model" title="Permalink to this headline">#</a></h4>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="3a694b56-9439-4fad-957c-b4bcff1625af" name="7ad57312-08f6-4dbe-aac8-86fb9ac2a2ad" type="radio"/>
+<label class="sd-tab-label" data-sync-id="key-keras" for="3a694b56-9439-4fad-957c-b4bcff1625af">
+Keras</label><div class="sd-tab-content docutils">
+<p>Create a model in Python by using Keras. Keep an eye on the supported features of AIfES in the
+<a href="https://fraunhofer-ims.github.io/AIfES_for_Arduino/#OverviewFeatures" target="_blank">documentation</a> as only those functions can be
+converted. You can also load a stored model and convert it to AIfES.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" open="open">
+<summary class="sd-summary-title sd-card-header">
+Example<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In this example different options for creation and loading of Keras models are shown.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="03ec4261-301c-40fe-af8d-144a91c351bc" name="6248bbb5-8a0f-4f30-8653-55a64d6f469d" type="radio"/>
+<label class="sd-tab-label" for="03ec4261-301c-40fe-af8d-144a91c351bc">
+Create model &amp; train it or set parameters manually</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Here we show you how you can create your model with Keras. You can choose to either train your model
+or to set the weights and biases manually. For this you need to create the model first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span>
+<span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'sigmoid'</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'sigmoid'</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sd-card-text">After the creation of your model, you can now either train it or set the weights and biases.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="865f1de5-e354-4714-8bf0-b9fcecadcd46" name="2a8198e9-f11b-4e22-a272-c228feac544b" type="radio"/>
+<label class="sd-tab-label" for="865f1de5-e354-4714-8bf0-b9fcecadcd46">
+Train the model</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train your model</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s2">"binary_crossentropy"</span><span class="p">)</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]])</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">0.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">1.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">1.</span><span class="p">]])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="55541fc1-1f91-4837-b3f3-fe4efc7efce2" name="2a8198e9-f11b-4e22-a272-c228feac544b" type="radio"/>
+<label class="sd-tab-label" for="55541fc1-1f91-4837-b3f3-fe4efc7efce2">
+Set the weights and biases of the model</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># You may set the weights manually instead of training the model.</span>
+<span class="n">w1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">0.9368746</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.29152113</span><span class="p">,</span>  <span class="mf">0.29609978</span><span class="p">,</span>
+                <span class="o">-</span><span class="mf">0.14289689</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.56332463</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.567354</span>  <span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.72655</span><span class="p">,</span> <span class="mf">2.67281</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21291</span><span class="p">])</span>
+
+<span class="n">w2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0711929</span><span class="p">,</span> <span class="mf">0.34211</span><span class="p">,</span>
+               <span class="mf">0.0844624</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.14391</span><span class="p">])</span>
+
+<span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">w1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b2</span><span class="p">]</span>
+<span class="n">model</span><span class="o">.</span><span class="n">set_weights</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Then you can export the model. During export an executable header file is created.</p>
+</div>
+</div>
+</div>
+<input id="718069a3-5b2e-4b5f-be1d-0d8c1cd44220" name="6248bbb5-8a0f-4f30-8653-55a64d6f469d" type="radio"/>
+<label class="sd-tab-label" for="718069a3-5b2e-4b5f-be1d-0d8c1cd44220">
+Load model</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">You can load stored models and convert them in the next step. To load the model follow the next steps:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
+
+<span class="c1"># If you stored your model with:</span>
+<span class="c1"># model.save('path/to/location')</span>
+<span class="c1"># Then you can load it with:</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">'path/to/location'</span><span class="p">)</span>
+
+<span class="c1"># If your model is stored as a *.h5 file you can load it with:</span>
+<span class="c1"># model = keras.models.load_model("my_h5_model.h5")</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
+<input id="e5d16779-e0d9-42a3-8ac5-2ee883ea8694" name="7ad57312-08f6-4dbe-aac8-86fb9ac2a2ad" type="radio"/>
+<label class="sd-tab-label" data-sync-id="key-pytorch" for="e5d16779-e0d9-42a3-8ac5-2ee883ea8694">
+Pytorch</label><div class="sd-tab-content docutils">
+<p>Create a model in Python by using PyTorch. Keep an eye on the supported features of AIfES in the
+<a href="https://fraunhofer-ims.github.io/AIfES_for_Arduino/#OverviewFeatures" target="_blank">documentation</a> as only those functions can be
+converted. You can also load a stored model and convert it to AIfES.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" open="open">
+<summary class="sd-summary-title sd-card-header">
+Example<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In this example different options for creation and loading of PyTorch models are shown.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="544fac0f-4020-42af-ae1a-5dc54e546ea0" name="fa14da97-5b1a-497f-98ca-f0f5eefa746b" type="radio"/>
+<label class="sd-tab-label" for="544fac0f-4020-42af-ae1a-5dc54e546ea0">
+Create model</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+
+<span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">Net</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">dense_layer_1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">leaky_relu_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">dense_layer_2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dense_layer_1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">leaky_relu_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dense_layer_2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]])</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">0.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">1.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">1.</span><span class="p">]])</span>
+
+
+<span class="n">X_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Y_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">Net</span><span class="p">()</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X_tensor</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">Y_tensor</span><span class="p">)</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input id="a62e72d8-7b1b-4a48-9e97-213ac8f7e895" name="fa14da97-5b1a-497f-98ca-f0f5eefa746b" type="radio"/>
+<label class="sd-tab-label" for="a62e72d8-7b1b-4a48-9e97-213ac8f7e895">
+Load model</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">You can also load a presaved model by following the next steps. Other methods are also possible,
+but not listed here. See the documentation from PyTorch for more details.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="c1"># Saving model:</span>
+<span class="c1"># torch.save(model, 'path/to/location')</span>
+
+<span class="c1"># Load model:</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'path/to/location'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
+</div>
+</section>
+<section id="export-the-model-using-aifes-converter">
+<span id="export-model"></span><h4>2. Export the model using AIfES-Converter<a class="headerlink" href="#export-the-model-using-aifes-converter" title="Permalink to this headline">#</a></h4>
+<p>Choose the desired AIfES FFNN implementation from the available ones <a class="reference internal" href="functions.html#available-functions"><span class="std std-ref">here</span></a>. Call the
+converter tool with the chosen implementation. The converter
+tool will create the necessary header files for usage in your IDE in the destination file path <cite>path/to/location</cite>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the output file path doesn’t exist, the corresponding folder will be created.</p>
+</div>
+<p>The converter tool allows you also to only export the structure of your model without any weights and biases. For this you need to set the option <code class="docutils literal notranslate"><span class="pre">with_weights=False</span></code> during conversion, if supported by the corresponding
+function (currently only supported for float32 based implementation, see <a class="reference internal" href="functions.html#available-functions"><span class="std std-ref">available functions</span></a>, as Q7 needs a representative dataset and
+quantization parameters per layer). This creates a header file, which is prepared to include your own weights and biases.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The created header file of the conversion without weights is not executable. Please see the comments in the header file regarding the weights and biases in the function
+<code class="docutils literal notranslate"><span class="pre">aifes_f32_fnn_create_model()</span></code>/<code class="docutils literal notranslate"><span class="pre">aifes_e_f32_fnn_inference()</span></code>.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" open="open">
+<summary class="sd-summary-title sd-card-header">
+Example<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In this example we want to convert the model to an FFNN with floating point precision and the normal AIfES interface:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="e9625d7e-a1ea-49da-b950-fb67313159a6" name="0e5cf5fd-0d73-40f5-b72a-72c4e16ac89b" type="radio"/>
+<label class="sd-tab-label" data-sync-id="key-keras" for="e9625d7e-a1ea-49da-b950-fb67313159a6">
+Keras</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aifes</span> <span class="kn">import</span> <span class="n">keras2aifes</span>
+
+<span class="n">keras2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_f32</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">'path/to/location'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="f7c8bf15-3c10-4f9e-85be-db7a96774398" name="0e5cf5fd-0d73-40f5-b72a-72c4e16ac89b" type="radio"/>
+<label class="sd-tab-label" data-sync-id="key-pytorch" for="f7c8bf15-3c10-4f9e-85be-db7a96774398">
+PyTorch</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aifes</span> <span class="kn">import</span> <span class="n">pytorch2aifes</span>
+
+<span class="n">pytorch2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_f32</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">'path/to/location'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+<section id="import-the-model-into-your-project">
+<h4>3. Import the model into your project<a class="headerlink" href="#import-the-model-into-your-project" title="Permalink to this headline">#</a></h4>
+<p>Import the files in your IDE and use the prepared function calls on top of the header file to call the FFNN in AIfES.
+For this, copy the header files from the <code class="docutils literal notranslate"><span class="pre">OUTPUT_PATH</span></code> and add them to your project in your desired IDE, as you would add
+any other header file. Make sure, that you have installed the AIfES Library, either via the Library Manager in the
+Arduino IDE or by following the instructions in our <a href="https://github.com/Fraunhofer-IMS/AIfES_for_Arduino#installation-guides-for-various-ides" target="_blank">GitHub Repository</a> for other IDEs. Then import the header files into your
+project.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" open="open">
+<summary class="sd-summary-title sd-card-header">
+Example Arduino IDE<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">To import the header files into an Arduino Project you need a saved project. Open the folder, where your project is stored (<code class="docutils literal notranslate"><span class="pre">*.ino</span></code> file). If you dont have a project yet, create one and save it. After this open the folder.
+Copy the created header files from the AIfES-Converter into the folder with the <code class="docutils literal notranslate"><span class="pre">*.ino</span></code> file. Close the project in the Arduino IDE and then open it again. The header files should be now included in the project and be visible as separate tabs.
+Import the header files into your <code class="docutils literal notranslate"><span class="pre">*.ino</span></code> file by adding the following two lines to your file:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="1744b2e4-ac77-462a-a47d-454d23484443" name="92ad8d21-e941-4925-8e1c-67e47e28a21e" type="radio"/>
+<label class="sd-tab-label" data-sync-id="key-aifes_e" for="1744b2e4-ac77-462a-a47d-454d23484443">
+AIfES Express Example</label><div class="sd-tab-content docutils">
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="c1">// For F32 based implementation</span>
+<span class="cp">#import "aifes_e_f32_fnn.h"</span>
+<span class="cp">#import "aifes_e_f32_weights.h"</span>
+
+<span class="c1">// For Q7 based implementation</span>
+<span class="cp">#import "aifes_e_q7_fnn.h"</span>
+<span class="cp">#import "aifes_e_q7_weights.h"</span>
+</pre></div>
+</div>
+</div>
+<input id="5e3f86f5-a418-4293-bff3-edabc96b69c5" name="92ad8d21-e941-4925-8e1c-67e47e28a21e" type="radio"/>
+<label class="sd-tab-label" data-sync-id="key-aifes" for="5e3f86f5-a418-4293-bff3-edabc96b69c5">
+AIfES Example</label><div class="sd-tab-content docutils">
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="c1">// For F32 based implementation</span>
+<span class="cp">#import "aifes_f32_fnn.h"</span>
+<span class="cp">#import "aifes_f32_weights.h"</span>
+
+<span class="c1">// For Q7 based implementation</span>
+<span class="cp">#import "aifes_q7_fnn.h"</span>
+<span class="cp">#import "aifes_q7_weights.h"</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+<section id="call-the-prepared-functions">
+<h4>4. Call the prepared functions<a class="headerlink" href="#call-the-prepared-functions" title="Permalink to this headline">#</a></h4>
+<p>Finally, the prepared functions need to be called by your application. The necessary function calls are in the comments at the top
+of the header file for the fnn <code class="docutils literal notranslate"><span class="pre">aifes_e_{dtype}_fnn.h</span></code> respectively <code class="docutils literal notranslate"><span class="pre">aifes_{dtype}_fnn.h</span></code>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" open="open">
+<summary class="sd-summary-title sd-card-header">
+Example<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="32efafbc-36f3-4d0c-b0c4-f5249fecd97b" name="41eccb41-ff9f-4e57-b285-86d31ce68e79" type="radio"/>
+<label class="sd-tab-label" data-sync-id="key-aifes_e" for="32efafbc-36f3-4d0c-b0c4-f5249fecd97b">
+AIfES Express Example</label><div class="sd-tab-content docutils">
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="c1">// Define of input and output array</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">input_data</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"> </span><span class="c1">// AIfES input data</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">output_data</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="c1">// AIfES output data</span>
+
+<span class="c1">// Set input array</span>
+<span class="n">input_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">input_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// Run inference</span>
+<span class="n">aifes_e_f32_fnn_inference</span><span class="p">((</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="n">input_data</span><span class="p">,(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="n">output_data</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Print results</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"Results: %.5f"</span><span class="p">,</span><span class="w"> </span><span class="n">output_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="6a1d629e-8e42-45a4-bab4-9a9020bd7f97" name="41eccb41-ff9f-4e57-b285-86d31ce68e79" type="radio"/>
+<label class="sd-tab-label" data-sync-id="key-aifes" for="6a1d629e-8e42-45a4-bab4-9a9020bd7f97">
+AIfES Example</label><div class="sd-tab-content docutils">
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="c1">// You first need to initialize the model once with:</span>
+<span class="c1">// ---------------------------------------------------------------------------</span>
+<span class="kt">uint8_t</span><span class="w"> </span><span class="n">error</span><span class="p">;</span><span class="w"></span>
+<span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aifes_f32_fnn_create_model</span><span class="p">();</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//do something for error handling</span>
+<span class="w">    </span><span class="c1">//e.g. while(true)</span>
+<span class="p">}</span><span class="w"></span>
+<span class="c1">// ---------------------------------------------------------------------------</span>
+<span class="c1">// Please check the error. It is 1 if something inside the initialization failed. Check the output.</span>
+
+<span class="c1">// Paste the following code into your project and insert your inputs/features:</span>
+<span class="c1">// ---------------------------------------------------------------------------</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">input_data</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"> </span><span class="c1">// AIfES input data</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">output_data</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="c1">// AIfES output data</span>
+
+<span class="w"> </span><span class="c1">// Set input array</span>
+<span class="n">input_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">input_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// Run inference</span>
+<span class="n">aifes_f32_fnn_inference</span><span class="p">((</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">input_data</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">output_data</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Print results</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"Results: %.5f"</span><span class="p">,</span><span class="w"> </span><span class="n">output_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+<span class="c1">// ---------------------------------------------------------------------------</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">The input and output dimensions need to be updated to your FFNN.
+A customized function call is provided in the header file. There, the input and output dimensions are automatically updated
+to your specific model. Therefore, use the function calls from the header file.</p>
+</div>
+</div>
+</details></section>
+</section>
+<section id="other-frameworks">
+<h3>Other Frameworks<a class="headerlink" href="#other-frameworks" title="Permalink to this headline">#</a></h3>
+<p>You can convert models from other frameworks to AIfES as well, as long as a conversion of those models to Keras or PyTorch
+and then to AIfES is possible. Otherwise, you can recreate the model using Keras and set the weights and biases manually and then
+export the model to AIfES. For ONNX you can use PyTorch, as it supports ONNX out of the box.
+For more details about that see <a href="https://pytorch.org/docs/stable/onnx.html" target="_blank">PyTorchs ONNX Documentation</a>.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="advanced_usage.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Advanced Usage</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="quickstart.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Quickstart</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Fraunhofer IMS
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Usage</a><ul>
+<li><a class="reference internal" href="#export-of-model">Export of model</a><ul>
+<li><a class="reference internal" href="#keras-and-pytorch">Keras and PyTorch</a><ul>
+<li><a class="reference internal" href="#create-the-model">1. Create the model</a></li>
+<li><a class="reference internal" href="#export-the-model-using-aifes-converter">2. Export the model using AIfES-Converter</a></li>
+<li><a class="reference internal" href="#import-the-model-into-your-project">3. Import the model into your project</a></li>
+<li><a class="reference internal" href="#call-the-prepared-functions">4. Call the prepared functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-frameworks">Other Frameworks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    </body>
+</html>
