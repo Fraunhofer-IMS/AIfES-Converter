@@ -24,7 +24,7 @@ setup(
     name="AIfES-Converter",
     version="1.0.0",
 
-    description="Converter for machine learning models to AIfES models",
+    description="This is a convert tool to create AIfES models for direct use in the Arduino IDE or other IDEs",
 
     long_description=long_description,
     long_description_content_type="text/markdown",
