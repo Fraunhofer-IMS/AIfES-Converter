@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Advanced Usage" href="advanced_usage.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
-        <title>Available Functions - AIfES-Converter 0.2.0 documentation</title>
+    <meta name="generator" content="sphinx-5.1.1, furo 2022.09.15"/>
+        <title>Available Functions - AIfES-Converter 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">AIfES-Converter 0.2.0 documentation</div></a>
+      <a href="index.html"><div class="brand">AIfES-Converter 1.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +151,7 @@
     <img class="sidebar-logo" src="_static/aifes.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">AIfES-Converter 0.2.0 documentation</span>
+  <span class="sidebar-brand-text">AIfES-Converter 1.0.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -182,7 +182,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -197,25 +198,25 @@
         </div>
         <article role="main">
           <section id="available-functions">
-<span id="id1"></span><h1>Available Functions<a class="headerlink" href="#available-functions" title="Permalink to this headline">#</a></h1>
+<span id="id1"></span><h1>Available Functions<a class="headerlink" href="#available-functions" title="Permalink to this heading">#</a></h1>
 <p>The following functions are available for a conversion from Keras and PyTorch to AIfES. They are sorted by the used interface.</p>
 <section id="aifes-express">
-<h2>AIfES Express<a class="headerlink" href="#aifes-express" title="Permalink to this headline">#</a></h2>
+<h2>AIfES Express<a class="headerlink" href="#aifes-express" title="Permalink to this heading">#</a></h2>
 <p>AIfES Express is an interface that allows easy and fast setup of FFNNs. It offers an intuitive interface and allows for changes of the model during runtime.
 We also offer the interface AIfES, see the <a class="reference internal" href="#aifes">AIfES</a> description further down the page.
 The following type specific converter functions exist:</p>
 <section id="float-32">
-<h3>Float 32<a class="headerlink" href="#float-32" title="Permalink to this headline">#</a></h3>
+<h3>Float 32<a class="headerlink" href="#float-32" title="Permalink to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="09c38242-0e9f-4f7a-ae63-9d0f109a1c71" name="bea12a6e-0462-462f-995a-15053ecc2e63" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-keras" for="09c38242-0e9f-4f7a-ae63-9d0f109a1c71">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-keras" for="sd-tab-item-0">
 Keras</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.keras2aifes.convert_to_fnn_f32_express">
-<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32_express</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">keras.engine.training.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_f32_express" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32_express</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_f32_express" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given Keras model to AIfES Express F32. Creates one header file with the model in the output_path that can be included to any AIfES project. If weights are extracted as well, a second header file is created, which contains the flattened weights of the Keras model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>keras_model</strong> – Keras model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -224,16 +225,17 @@ Keras</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
-<input id="451f350f-add2-4457-99d2-2f5c181dda00" name="bea12a6e-0462-462f-995a-15053ecc2e63" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-pytorch" for="451f350f-add2-4457-99d2-2f5c181dda00">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-pytorch" for="sd-tab-item-1">
 PyTorch</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.pytorch2aifes.convert_to_fnn_f32_express">
-<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32_express</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.nn.modules.module.Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_f32_express" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32_express</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_f32_express" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given PyTorch model to AIfES Express F32. Creates one header file with the model in the output_path that can be included to any AIfES project. If weights are extracted as well, a second header file is created, which contains the flattened weights of the PyTorch model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pytorch_model</strong> – PyTorch model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -242,21 +244,22 @@ PyTorch</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
 </div>
 </section>
 <section id="quantized-q7">
-<h3>Quantized Q7<a class="headerlink" href="#quantized-q7" title="Permalink to this headline">#</a></h3>
+<h3>Quantized Q7<a class="headerlink" href="#quantized-q7" title="Permalink to this heading">#</a></h3>
 <div class="sd-tab-set docutils" id="q7-aifes-e">
-<input checked="checked" id="47c6fbd7-1553-438d-8cfa-4cba09816234" name="a0c23c0c-9413-4f28-81cb-6986cf400251" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-keras" for="47c6fbd7-1553-438d-8cfa-4cba09816234">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-keras" for="sd-tab-item-2">
 Keras</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.keras2aifes.convert_to_fnn_q7_express">
-<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7_express</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">keras.engine.training.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_q7_express" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7_express</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_q7_express" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given Keras model to AIfES Express Q7. Creates one header file with the model in the output_path that can be included to any AIfES project. A second header file is created, which contains the flattened weights of the Keras model. This function converts the given Keras model to Q7. It needs representative data to calculate the quantization parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>keras_model</strong> – Keras model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -267,16 +270,17 @@ Keras</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
-<input id="a9275a1c-9db6-4dc1-afbc-59ff94aa31da" name="a0c23c0c-9413-4f28-81cb-6986cf400251" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-pytorch" for="a9275a1c-9db6-4dc1-afbc-59ff94aa31da">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-pytorch" for="sd-tab-item-3">
 PyTorch</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.pytorch2aifes.convert_to_fnn_q7_express">
-<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7_express</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.nn.modules.module.Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_q7_express" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7_express</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_q7_express" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given PyTorch model to AIfES Express Q7. Creates one header file with the model in the output_path that can be included to any AIfES project. A second header file is created, which contains the flattened weights of the PyTorch model. This function converts the given PyTorch model to Q7. It needs representative data to calculate the quantization parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pytorch_model</strong> – PyTorch model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -287,30 +291,31 @@ PyTorch</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
 </div>
 </section>
 </section>
 <section id="aifes">
-<h2>AIfES<a class="headerlink" href="#aifes" title="Permalink to this headline">#</a></h2>
+<h2>AIfES<a class="headerlink" href="#aifes" title="Permalink to this heading">#</a></h2>
 <p>AIfES offers an interface that is similar to other frameworks. With the following converter functions the FFNNs can be converted to the normal interface. It allows more
 control over the FFNNs by enabling optimized layer implementations (e.g., CMSIS implementations for ARM Cortex M controller) and finer control of layers.
 The following type specific converter functions exist:</p>
 <section id="id2">
-<h3>Float 32<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>Float 32<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <section id="default-implementation">
-<h4>Default Implementation<a class="headerlink" href="#default-implementation" title="Permalink to this headline">#</a></h4>
+<h4>Default Implementation<a class="headerlink" href="#default-implementation" title="Permalink to this heading">#</a></h4>
 <p>For conversion to the default implementation of the layers use the following function:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="916e0d6e-d4bc-4667-9a85-4c52b011cd9d" name="56b1b336-a59e-4834-9e2f-690333665e76" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-keras" for="916e0d6e-d4bc-4667-9a85-4c52b011cd9d">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-keras" for="sd-tab-item-4">
 Keras</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.keras2aifes.convert_to_fnn_f32">
-<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">keras.engine.training.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_f32" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_f32" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given Keras model to AIfES F32 (non-express version). Creates one header file with the model in the output_path that can be included to any AIfES project. If weights are extracted as well, a second header file is created, which contains the flattened weights of the Keras model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>keras_model</strong> – Keras model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -319,16 +324,17 @@ Keras</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
-<input id="f7f08d7b-6329-4937-ae0f-ec94a4480f8b" name="56b1b336-a59e-4834-9e2f-690333665e76" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-pytorch" for="f7f08d7b-6329-4937-ae0f-ec94a4480f8b">
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-pytorch" for="sd-tab-item-5">
 PyTorch</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.pytorch2aifes.convert_to_fnn_f32">
-<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.nn.modules.module.Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_f32" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_f32" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given PyTorch model to AIfES F32 (non-express version). Creates one header file with the model in the output_path that can be included to any AIfES project. If weights are extracted as well, a second header file is created, which contains the flattened weights of the PyTorch model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pytorch_model</strong> – PyTorch model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -337,22 +343,23 @@ PyTorch</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
 </div>
 </section>
 <section id="cmsis-implementation">
-<h4>CMSIS Implementation<a class="headerlink" href="#cmsis-implementation" title="Permalink to this headline">#</a></h4>
+<h4>CMSIS Implementation<a class="headerlink" href="#cmsis-implementation" title="Permalink to this heading">#</a></h4>
 <p id="cmsis-f32-implementation">For the optimized implementation of the layers using CMSIS use the following function:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ccb33273-5633-4bf7-987a-ab8b9c30cd90" name="13b5b8de-49bd-4fd1-a7dc-195f8b4e4f4c" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-keras" for="ccb33273-5633-4bf7-987a-ab8b9c30cd90">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-keras" for="sd-tab-item-6">
 Keras</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.keras2aifes.convert_to_fnn_f32_cmsis">
-<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32_cmsis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">keras.engine.training.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_f32_cmsis" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32_cmsis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_f32_cmsis" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given Keras model to AIfES F32 CMSIS implementation (non-express version). Creates one header file with the model in the output_path that can be included to any AIfES project. If weights are extracted as well, a second header file is created, which contains the flattened weights of the Keras model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>keras_model</strong> – Keras model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -361,16 +368,17 @@ Keras</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
-<input id="f96a73f3-d86d-4610-a738-53e3989b5774" name="13b5b8de-49bd-4fd1-a7dc-195f8b4e4f4c" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-pytorch" for="f96a73f3-d86d-4610-a738-53e3989b5774">
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-pytorch" for="sd-tab-item-7">
 PyTorch</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.pytorch2aifes.convert_to_fnn_f32_cmsis">
-<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32_cmsis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.nn.modules.module.Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_f32_cmsis" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_f32_cmsis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_f32_cmsis" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given PyTorch model to AIfES F32 CMSIS implementation (non-express version). Creates one header file with the model in the output_path that can be included to any AIfES project. If weights are extracted as well, a second header file is created, which contains the flattened weights of the PyTorch model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pytorch_model</strong> – PyTorch model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -379,25 +387,26 @@ PyTorch</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
 </div>
 </section>
 </section>
 <section id="id3">
-<h3>Quantized Q7<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>Quantized Q7<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <section id="q7-aifes">
-<span id="id4"></span><h4>Default Implementation<a class="headerlink" href="#q7-aifes" title="Permalink to this headline">#</a></h4>
+<span id="id4"></span><h4>Default Implementation<a class="headerlink" href="#q7-aifes" title="Permalink to this heading">#</a></h4>
 <p>For conversion to the default implementation of the layers and automatic quantization of your Model use the following function:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7d4bac09-7ea7-42d2-8c10-e9ae282085a0" name="be16aeaa-73b2-4e5f-b1ea-d7aea49bcde8" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-keras" for="7d4bac09-7ea7-42d2-8c10-e9ae282085a0">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-keras" for="sd-tab-item-8">
 Keras</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.keras2aifes.convert_to_fnn_q7">
-<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">keras.engine.training.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_q7" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_q7" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given Keras model to AIfES Q7 implementation (non-express version). Creates one header file with the model in the output_path that can be included to any AIfES project. A second header file is created, which contains the flattened weights of the Keras model. This function converts the given Keras model to Q7. It needs representative data to calculate the quantization parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>keras_model</strong> – Keras model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -409,16 +418,17 @@ Keras</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
-<input id="fda7e9e2-5dda-4182-8bc5-d18d490850d8" name="be16aeaa-73b2-4e5f-b1ea-d7aea49bcde8" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-pytorch" for="fda7e9e2-5dda-4182-8bc5-d18d490850d8">
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-pytorch" for="sd-tab-item-9">
 PyTorch</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.pytorch2aifes.convert_to_fnn_q7">
-<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.nn.modules.module.Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_q7" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_q7" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given PyTorch model to AIfES Q7 implementation (non-express version). Creates one header file with the model in the output_path that can be included to any AIfES project. A second header file is created, which contains the flattened weights of the PyTorch model. This function converts the given PyTorch model to Q7. It needs representative data to calculate the quantization parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pytorch_model</strong> – PyTorch model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -430,22 +440,23 @@ PyTorch</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
 </div>
 </section>
 <section id="id5">
-<h4>CMSIS Implementation<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<h4>CMSIS Implementation<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
 <p id="cmsis-q7-implementation">For the optimized implementation of the layers using CMSIS and automatic quantization of your Model use the following function:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3b0a9cb0-be26-448d-b212-47915003692b" name="0f5df952-4626-4465-bf4a-39938f2982be" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-keras" for="3b0a9cb0-be26-448d-b212-47915003692b">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-keras" for="sd-tab-item-10">
 Keras</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.keras2aifes.convert_to_fnn_q7_cmsis">
-<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7_cmsis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">keras.engine.training.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_q7_cmsis" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.keras2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7_cmsis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keras_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.keras2aifes.convert_to_fnn_q7_cmsis" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given Keras model to AIfES Q7 implementation with CMSIS support (non-express version). Creates one header file with the model in the output_path that can be included to any AIfES project. A second header file is created, which contains the flattened weights of the Keras model. This function converts the given Keras model to Q7. It needs representative data to calculate the quantization parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>keras_model</strong> – Keras model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -456,16 +467,17 @@ Keras</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
-<input id="0c668112-9463-40a6-a014-63d01c7758ae" name="0f5df952-4626-4465-bf4a-39938f2982be" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-pytorch" for="0c668112-9463-40a6-a014-63d01c7758ae">
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-pytorch" for="sd-tab-item-11">
 PyTorch</label><div class="sd-tab-content docutils">
 <dl class="py function">
 <dt class="sig sig-object py" id="aifes.pytorch2aifes.convert_to_fnn_q7_cmsis">
-<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7_cmsis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.nn.modules.module.Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_q7_cmsis" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">aifes.pytorch2aifes.</span></span><span class="sig-name descname"><span class="pre">convert_to_fnn_q7_cmsis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pytorch_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representative_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aifes.pytorch2aifes.convert_to_fnn_q7_cmsis" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the given PyTorch model to AIfES Q7 implementation with CMSIS support (non-express version). Creates one header file with the model in the output_path that can be included to any AIfES project. A second header file is created, which contains the flattened weights of the PyTorch model. This function converts the given PyTorch model to Q7. It needs representative data to calculate the quantization parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pytorch_model</strong> – PyTorch model, which should be converted</p></li>
 <li><p><strong>output_path</strong> – File path, where the converted model should be stored. If the folder doesn’t exist, it will be created by this function.</p></li>
@@ -476,6 +488,7 @@ PyTorch</label><div class="sd-tab-content docutils">
 </dd>
 </dl>
 </dd></dl>
+
 </div>
 </div>
 </section>
@@ -490,7 +503,7 @@ PyTorch</label><div class="sd-tab-content docutils">
         <div class="related-pages">
           
           <a class="prev-page" href="advanced_usage.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -526,7 +539,7 @@ PyTorch</label><div class="sd-tab-content docutils">
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -565,6 +578,7 @@ PyTorch</label><div class="sd-tab-content docutils">
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/clipboard.min.js"></script>

@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Available Functions" href="functions.html" /><link rel="prev" title="Usage" href="usage.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
-        <title>Advanced Usage - AIfES-Converter 0.2.0 documentation</title>
+    <meta name="generator" content="sphinx-5.1.1, furo 2022.09.15"/>
+        <title>Advanced Usage - AIfES-Converter 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">AIfES-Converter 0.2.0 documentation</div></a>
+      <a href="index.html"><div class="brand">AIfES-Converter 1.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +151,7 @@
     <img class="sidebar-logo" src="_static/aifes.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">AIfES-Converter 0.2.0 documentation</span>
+  <span class="sidebar-brand-text">AIfES-Converter 1.0.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -182,7 +182,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -197,12 +198,12 @@
         </div>
         <article role="main">
           <section id="advanced-usage">
-<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">#</a></h1>
+<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this heading">#</a></h1>
 <p>This converter tool allows for advanced configuration options during conversion. You can enable the usage of the CMSIS
 for ARM based controller to accelerate the inference of your model. Also, this convert tool can quantize your model to
 Q7 .</p>
 <section id="quantization-of-your-ffnn">
-<h2>Quantization of your FFNN<a class="headerlink" href="#quantization-of-your-ffnn" title="Permalink to this headline">#</a></h2>
+<h2>Quantization of your FFNN<a class="headerlink" href="#quantization-of-your-ffnn" title="Permalink to this heading">#</a></h2>
 <p>With this converter you can quantize your model to Q7. This converts the floating point precision FFNN to a fixed point precision with 8 bit resolution.
 This reduces the storage size of your model and can improve the performance of FFNNs on microcontrollers without
 Floating Point Unit (e.g. Arduino Uno). For more details about the quantization used in AIfES see <a href="https://fraunhofer-ims.github.io/AIfES_for_Arduino/_tutorial_inference_q7.html#autotoc_md33" target="_blank">Q7 documentation</a>.</p>
@@ -213,12 +214,8 @@ that the neural net is capable of representing those values as well. This helps 
 maybe false results. In the following we will show some examples.</p>
 <p>See the documentation for <a class="reference internal" href="functions.html#q7-aifes-e"><span class="std std-ref">AIfES Express</span></a> and <a class="reference internal" href="functions.html#q7-aifes"><span class="std std-ref">AIfES</span></a> for detailed description of the available configuration parameters.
 In the following table are some common configurations for the Arduino Boards (respectively their microcontrollers):</p>
-<div class="table-wrapper"><table class="docutils align-default">
-<colgroup>
-<col style="width: 45%"/>
-<col style="width: 40%"/>
-<col style="width: 15%"/>
-</colgroup>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Board / Microcontroller</p></th>
 <th class="head"><p>target_alignment</p></th>
@@ -251,23 +248,24 @@ Storage organized as 32 Bit</p></td>
 <td><p>little</p></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" open="open">
 <summary class="sd-summary-title sd-card-header">
 Example<div class="sd-summary-down docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The following examples show how to convert your model. For this you need to load or setup your Keras or PyTorch model
 as described in the <a class="reference internal" href="usage.html"><span class="doc">Usage</span></a> section.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c0f03798-ace4-4b85-99b6-735cd897fa3a" name="8e54c9c1-b9ff-44fe-bbd7-24609c2da20a" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-keras" for="c0f03798-ace4-4b85-99b6-735cd897fa3a">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-keras" for="sd-tab-item-0">
 Keras</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4f4687c4-2c25-41e8-9719-185aedea9bc2" name="df840c48-0492-457f-a091-3c8cf33758d8" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-aifes_e" for="4f4687c4-2c25-41e8-9719-185aedea9bc2">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-aifes_e" for="sd-tab-item-2">
 AIfES Express Example</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aifes</span> <span class="kn">import</span> <span class="n">keras2aifes</span>
 
@@ -277,12 +275,12 @@ AIfES Express Example</label><div class="sd-tab-content docutils">
                                    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 
 <span class="c1"># Example for 32 bit storage alignment (4 Byte) and little endian representation</span>
-<span class="n">keras2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_q7_express</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">'path/to/location/keras/output'</span><span class="p">,</span> <span class="n">representative_data</span><span class="o">=</span><span class="n">representative_dataset</span><span class="p">,</span> <span class="n">target_alignment</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">"little"</span><span class="p">)</span>
+<span class="n">keras2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_q7_express</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;path/to/location/keras/output&#39;</span><span class="p">,</span> <span class="n">representative_data</span><span class="o">=</span><span class="n">representative_dataset</span><span class="p">,</span> <span class="n">target_alignment</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="3d792814-fdab-4384-9ad8-9db2cabacfd6" name="df840c48-0492-457f-a091-3c8cf33758d8" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-aifes" for="3d792814-fdab-4384-9ad8-9db2cabacfd6">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-aifes" for="sd-tab-item-3">
 AIfES Example</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aifes</span> <span class="kn">import</span> <span class="n">keras2aifes</span>
 
@@ -292,18 +290,18 @@ AIfES Example</label><div class="sd-tab-content docutils">
                                    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 
 <span class="c1"># Example for 32 bit storage alignment (4 Byte) and little endian representation</span>
-<span class="n">keras2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_q7</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">'path/to/location/keras/output'</span><span class="p">,</span> <span class="n">representative_data</span><span class="o">=</span><span class="n">representative_dataset</span><span class="p">,</span> <span class="n">target_alignment</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">"little"</span><span class="p">)</span>
+<span class="n">keras2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_q7</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;path/to/location/keras/output&#39;</span><span class="p">,</span> <span class="n">representative_data</span><span class="o">=</span><span class="n">representative_dataset</span><span class="p">,</span> <span class="n">target_alignment</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<input id="0788302e-f748-4366-8835-fec92c8bc7ec" name="8e54c9c1-b9ff-44fe-bbd7-24609c2da20a" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-pytorch" for="0788302e-f748-4366-8835-fec92c8bc7ec">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-pytorch" for="sd-tab-item-1">
 Pytorch</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="31d57d4d-6678-4feb-a693-9bbc9d6aed2e" name="6ac388c7-0cf8-438a-b3d6-12baf1180566" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-aifes_e" for="31d57d4d-6678-4feb-a693-9bbc9d6aed2e">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-aifes_e" for="sd-tab-item-4">
 AIfES Express Example</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aifes</span> <span class="kn">import</span> <span class="n">pytorch2aifes</span>
 
@@ -313,12 +311,12 @@ AIfES Express Example</label><div class="sd-tab-content docutils">
                                    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 
 <span class="c1"># Example for 32 bit storage alignment (4 Byte) and little endian representation</span>
-<span class="n">pytorch2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_q7_express</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">'path/to/location/pytorch/output'</span><span class="p">,</span> <span class="n">representative_data</span><span class="o">=</span><span class="n">representative_dataset</span><span class="p">,</span> <span class="n">target_alignment</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">"little"</span><span class="p">)</span>
+<span class="n">pytorch2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_q7_express</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;path/to/location/pytorch/output&#39;</span><span class="p">,</span> <span class="n">representative_data</span><span class="o">=</span><span class="n">representative_dataset</span><span class="p">,</span> <span class="n">target_alignment</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="37ccb86a-f561-46f8-881f-3afe981f1b2a" name="6ac388c7-0cf8-438a-b3d6-12baf1180566" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-aifes" for="37ccb86a-f561-46f8-881f-3afe981f1b2a">
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-aifes" for="sd-tab-item-5">
 AIfES Example</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aifes</span> <span class="kn">import</span> <span class="n">pytorch2aifes</span>
 
@@ -328,7 +326,7 @@ AIfES Example</label><div class="sd-tab-content docutils">
                                    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 
 <span class="c1"># Example for 32 bit storage alignment (4 Byte) and little endian representation</span>
-<span class="n">pytorch2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_q7</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">'path/to/location/pytorch/output'</span><span class="p">,</span> <span class="n">representative_data</span><span class="o">=</span><span class="n">representative_dataset</span><span class="p">,</span> <span class="n">target_alignment</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">"little"</span><span class="p">)</span>
+<span class="n">pytorch2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_q7</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;path/to/location/pytorch/output&#39;</span><span class="p">,</span> <span class="n">representative_data</span><span class="o">=</span><span class="n">representative_dataset</span><span class="p">,</span> <span class="n">target_alignment</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -338,29 +336,29 @@ AIfES Example</label><div class="sd-tab-content docutils">
 </div>
 </details></section>
 <section id="use-cmsis-for-arm-based-microcontrollers">
-<h2>Use CMSIS for ARM-based microcontrollers<a class="headerlink" href="#use-cmsis-for-arm-based-microcontrollers" title="Permalink to this headline">#</a></h2>
+<h2>Use CMSIS for ARM-based microcontrollers<a class="headerlink" href="#use-cmsis-for-arm-based-microcontrollers" title="Permalink to this heading">#</a></h2>
 <p>To use CMSIS in your model you can use the intended converter functions (for Float see <a class="reference internal" href="functions.html#cmsis-f32-implementation"><span class="std std-ref">CMSIS F32</span></a>
 and for Q7 see <a class="reference internal" href="functions.html#cmsis-q7-implementation"><span class="std std-ref">CMSIS Q7</span></a>). To be able to use these functions you need to have CMSIS available
 in your IDE. For the Arduino IDE follow the instructions on our <a href="https://github.com/Fraunhofer-IMS/AIfES_for_Arduino#arm-cmsis" target="_blank">GitHub Repository</a>. For other IDEs follow the instructions of
 your IDE.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4068df7c-8178-41e8-b0ae-2411b66f29c3" name="2ec798fb-12b0-43ec-a809-0362a27427e3" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-keras" for="4068df7c-8178-41e8-b0ae-2411b66f29c3">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-keras" for="sd-tab-item-6">
 Keras</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aifes</span> <span class="kn">import</span> <span class="n">keras2aifes</span>
 
 <span class="c1"># Example for F32, also as Q7 possible</span>
-<span class="n">keras2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_f32_cmsis</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">'path/to/location/keras/output'</span><span class="p">)</span>
+<span class="n">keras2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_f32_cmsis</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;path/to/location/keras/output&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="3324fc24-6131-4be5-a14d-15f604fe5b5d" name="2ec798fb-12b0-43ec-a809-0362a27427e3" type="radio"/>
-<label class="sd-tab-label" data-sync-id="key-pytorch" for="3324fc24-6131-4be5-a14d-15f604fe5b5d">
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key-pytorch" for="sd-tab-item-7">
 Pytorch</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aifes</span> <span class="kn">import</span> <span class="n">pytorch2aifes</span>
 
 <span class="c1"># Example for F32, also as Q7 possible</span>
-<span class="n">pytorch2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_f32_cmsis</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">'path/to/location/pytorch/output'</span><span class="p">)</span>
+<span class="n">pytorch2aifes</span><span class="o">.</span><span class="n">convert_to_fnn_f32_cmsis</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;path/to/location/pytorch/output&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -380,10 +378,10 @@ Pytorch</label><div class="sd-tab-content docutils">
                 </div>
                 <div class="title">Available Functions</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="usage.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -419,7 +417,7 @@ Pytorch</label><div class="sd-tab-content docutils">
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -442,6 +440,7 @@ Pytorch</label><div class="sd-tab-content docutils">
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/clipboard.min.js"></script>
